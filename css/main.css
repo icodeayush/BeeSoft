@@ -98,6 +98,8 @@ body {
 #wrapper #logo {
   position: absolute;
   z-index: 2;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   top: var(--GoldenRatio7);
   right: var(--GoldenRatio7);
@@ -286,11 +288,13 @@ body {
 }
 
 #wrapper {
+  -webkit-animation: BGFadeAni 1.5s 6.1s ease forwards;
   animation: BGFadeAni 1.5s 6.1s ease forwards;
   background: black;
 }
 
 #wrapper #SVGWrap {
+  -webkit-animation: SVGFadeAni 3.3s 6.3s ease forwards;
   animation: SVGFadeAni 3.3s 6.3s ease forwards;
   opacity: 0;
 }
@@ -308,50 +312,70 @@ body {
 }
 
 #wrapper #intro h1 span {
+  -webkit-animation: LoadAniY 3s 1s var(--EaseInPower3) forwards;
   animation: LoadAniY 3s 1s var(--EaseInPower3) forwards;
 }
 
 #wrapper #logo h1 {
+  -webkit-animation: LoadAniY 2.2s 2.3s var(--EaseInPower2) forwards;
   animation: LoadAniY 2.2s 2.3s var(--EaseInPower2) forwards;
 }
 
 #wrapper footer #insta {
+  -webkit-animation: LoadAniOpacityY 1.5s 3.4s var(--EaseInPower2) forwards;
   animation: LoadAniOpacityY 1.5s 3.4s var(--EaseInPower2) forwards;
 }
 
 #wrapper footer #Behance {
+  -webkit-animation: LoadAniOpacityY 1.5s 3.6s var(--EaseInPower2) forwards;
   animation: LoadAniOpacityY 1.5s 3.6s var(--EaseInPower2) forwards;
 }
 
 #wrapper footer #copyright {
+  -webkit-animation: LoadAniOpacityY 1.5s 3.8s var(--EaseInPower2) forwards;
   animation: LoadAniOpacityY 1.5s 3.8s var(--EaseInPower2) forwards;
 }
 
 #wrapper footer #codeby {
+  -webkit-animation: LoadAniOpacityY 1.5s 4.2s var(--EaseInPower2) forwards;
   animation: LoadAniOpacityY 1.5s 4.2s var(--EaseInPower2) forwards;
 }
 
 #wrapper footer #codeby span {
+  -webkit-animation: LoadAniOpacityY 1.5s 4.4s var(--EaseInPower2) forwards;
   animation: LoadAniOpacityY 1.5s 4.4s var(--EaseInPower2) forwards;
 }
 
 #wrapper #Lang span a {
+  -webkit-animation: LoadAniOpacityXR 1.5s 4.8s var(--EaseInPower3) forwards;
   animation: LoadAniOpacityXR 1.5s 4.8s var(--EaseInPower3) forwards;
 }
 
 #wrapper #Lang span a:nth-child(2) {
+  -webkit-animation: LoadAniOpacityXL 1.5s 5s var(--EaseInPower3) forwards;
   animation: LoadAniOpacityXL 1.5s 5s var(--EaseInPower3) forwards;
 }
 
 #wrapper nav span a:nth-child(1) {
+  -webkit-animation: LoadAniXL 1.5s 6s var(--EaseInPower1) forwards;
   animation: LoadAniXL 1.5s 6s var(--EaseInPower1) forwards;
 }
 
 #wrapper nav span a:nth-child(2) {
+  -webkit-animation: LoadAniXR 1.5s 6.2s var(--EaseInPower1) forwards;
   animation: LoadAniXR 1.5s 6.2s var(--EaseInPower1) forwards;
 }
 
 /*-------------Animation Keyframes------------- */
+
+@-webkit-keyframes BGFadeAni {
+  from {
+    background: black;
+  }
+  to {
+    background: rgba(0, 0, 0, 0);
+  }
+}
 
 @keyframes BGFadeAni {
   from {
@@ -359,6 +383,15 @@ body {
   }
   to {
     background: rgba(0, 0, 0, 0);
+  }
+}
+
+@-webkit-keyframes SVGFadeAni {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -371,12 +404,41 @@ body {
   }
 }
 
+@-webkit-keyframes BGAni {
+  from {
+    background-image: linear-gradient(to top left, #FFC796 0%, #FF6B95 100%);
+  }
+  to {
+    background-image: linear-gradient(to top left, #b721ff 0%, #21d4fd 100%);
+  }
+}
+
 @keyframes BGAni {
   from {
     background-image: linear-gradient(to top left, #FFC796 0%, #FF6B95 100%);
   }
   to {
     background-image: linear-gradient(to top left, #b721ff 0%, #21d4fd 100%);
+  }
+}
+
+@-webkit-keyframes svgA {
+  0% {
+    width: 20vw;
+    height: 20vw;
+    left: 10vw;
+    top: 25vh;
+    background: url(../svg/s21.svg) no-repeat center;
+  }
+  20% {
+    background: url(../svg/s11.svg) no-repeat center;
+  }
+  100% {
+    top: 55vw;
+    left: -40vw;
+    height: 60vw;
+    width: 60vw;
+    background: url(../svg/s11.svg) no-repeat center;
   }
 }
 
@@ -400,6 +462,23 @@ body {
   }
 }
 
+@-webkit-keyframes svgB {
+  0% {
+    right: 6vw;
+    top: 6vw;
+    background: url(../svg/s22.svg) no-repeat center;
+  }
+  20% {
+    background: url(../svg/s12.svg) no-repeat center;
+  }
+  100% {
+    height: 30vw;
+    width: 30vw;
+    top: 56vw;
+    background: url(../svg/s22.svg) no-repeat center;
+  }
+}
+
 @keyframes svgB {
   0% {
     right: 6vw;
@@ -414,6 +493,29 @@ body {
     width: 30vw;
     top: 56vw;
     background: url(../svg/s22.svg) no-repeat center;
+  }
+}
+
+@-webkit-keyframes svgC {
+  0% {
+    width: 40vw;
+    height: 30vw;
+    right: 6vw;
+    top: 6vw;
+    background: url(../svg/so1.svg) no-repeat center;
+  }
+  40% {
+    background: url(../svg/so2.svg) no-repeat center;
+  }
+  80% {
+    background: url(../svg/so1.svg) no-repeat center;
+  }
+  100% {
+    width: 70vw;
+    height: 60vw;
+    top: 52vw;
+    right: -30vw;
+    background: url(../svg/so1.svg) no-repeat center;
   }
 }
 
@@ -440,10 +542,30 @@ body {
   }
 }
 
+@-webkit-keyframes LoadAniY {
+  from {
+    opacity: 0;
+    transform: translateY(3.1vw);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes LoadAniY {
   from {
     opacity: 0;
     transform: translateY(3.1vw);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes LoadAniXL {
+  from {
+    opacity: 0;
+    transform: translateX(1.5vw);
   }
   to {
     opacity: 1;
@@ -460,10 +582,30 @@ body {
   }
 }
 
+@-webkit-keyframes LoadAniXR {
+  from {
+    opacity: 0;
+    transform: translateX(-1.5vw);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes LoadAniXR {
   from {
     opacity: 0;
     transform: translateX(-1.5vw);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes LoadAniOpacityY {
+  from {
+    opacity: 0;
+    transform: translateY(0.7vw);
   }
   to {
     opacity: 1;
@@ -480,10 +622,30 @@ body {
   }
 }
 
+@-webkit-keyframes LoadAniOpacityXL {
+  from {
+    opacity: 0;
+    transform: translateX(0.3vw);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes LoadAniOpacityXL {
   from {
     opacity: 0;
     transform: translateX(0.3vw);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes LoadAniOpacityXR {
+  from {
+    opacity: 0;
+    transform: translateX(-0.3vw);
   }
   to {
     opacity: 1;
@@ -527,3 +689,192 @@ body {
     --GoldenRatio13: 0.310vw;
   }
 }
+
+/*-------------@media (max-width: 400px)------------- */
+
+@media (max-width: 400px) {
+  :root {
+    /*-------------Perfect Fifth (1.500) (Viewport Width 400px) Base Size 10px------------- */
+    --FontH1: 58.313vw;
+    --FontH2: 36.040vw;
+    --FontH3: 22.275vw;
+    --FontH4: 13.768vw;
+    --FontH5: 8.508vw;
+    --FontParagraph: 5.258vw;
+    --FontSubtitle: 3.250vw;
+    /*-------------GoldenRatio (1.618) (Viewport Width 400px)------------- */
+    --GoldenRatio1: 100vw;
+    --GoldenRatio2: 61.805vw;
+    --GoldenRatio3: 38.197vw;
+    --GoldenRatio4: 23.608vw;
+    --GoldenRatio5: 14.590vw;
+    --GoldenRatio6: 9.018vw;
+    --GoldenRatio7: 5.572vw;
+    --GoldenRatio8: 3.445vw;
+    --GoldenRatio9: 2.130vw;
+    --GoldenRatio10: 1.317vw;
+  }
+  #wrapper #logo h1 {
+    font-size: var(--FontParagraph);
+  }
+  #wrapper #intro h1 span {
+    font-size: var(--FontParagraph);
+    width: var(--GoldenRatio2);
+    margin-left: unset;
+    margin: auto;
+  }
+  #wrapper nav span a:nth-child(1) {
+    height: var(--FontParagraph);
+    width: var(--FontParagraph);
+  }
+  #wrapper nav span a:nth-child(2) {
+    height: var(--FontParagraph);
+    width: var(--FontParagraph);
+  }
+  #wrapper footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #wrapper footer #insta {
+    display: none;
+  }
+  #wrapper footer #Behance {
+    display: none;
+  }
+  #wrapper footer #copyright, #wrapper footer #codeby {
+    font-size: var(--FontSubtitle);
+    margin-left: var(--GoldenRatio7);
+  }
+  #wrapper footer #codeby {
+    margin-right: var(--GoldenRatio7);
+  }
+  #wrapper #Lang {
+    display: none;
+  }
+  #wrapper #SVGWrap #svgA {
+    animation: svgA 8.7s 4.9s ease-in-out infinite alternate-reverse;
+  }
+  #wrapper #SVGWrap #svgB {
+    animation: svgB 8.2s 6.1s ease-in-out infinite alternate-reverse;
+  }
+  #wrapper #SVGWrap #svgC {
+    animation: svgC 8.2s 6.3s ease-in-out infinite alternate-reverse;
+  }
+  @-webkit-keyframes svgA {
+    0% {
+      width: 20vw;
+      height: 20vw;
+      left: 10vw;
+      top: 25vh;
+      background: url(../svg/s21.svg) no-repeat center;
+    }
+    20% {
+      background: url(../svg/s11.svg) no-repeat center;
+    }
+    100% {
+      top: 185vw;
+      left: -40vw;
+      height: 60vw;
+      width: 60vw;
+      background: url(../svg/s11.svg) no-repeat center;
+    }
+  }
+  @keyframes svgA {
+    0% {
+      width: 20vw;
+      height: 20vw;
+      left: 10vw;
+      top: 25vh;
+      background: url(../svg/s21.svg) no-repeat center;
+    }
+    20% {
+      background: url(../svg/s11.svg) no-repeat center;
+    }
+    100% {
+      top: 185vw;
+      left: -40vw;
+      height: 60vw;
+      width: 60vw;
+      background: url(../svg/s11.svg) no-repeat center;
+    }
+  }
+  @-webkit-keyframes svgB {
+    0% {
+      right: 6vw;
+      top: 25vh;
+      background: url(../svg/s22.svg) no-repeat center;
+    }
+    20% {
+      background: url(../svg/s12.svg) no-repeat center;
+    }
+    100% {
+      height: 30vw;
+      width: 30vw;
+      top: 186vw;
+      background: url(../svg/s22.svg) no-repeat center;
+    }
+  }
+  @keyframes svgB {
+    0% {
+      right: 6vw;
+      top: 25vh;
+      background: url(../svg/s22.svg) no-repeat center;
+    }
+    20% {
+      background: url(../svg/s12.svg) no-repeat center;
+    }
+    100% {
+      height: 30vw;
+      width: 30vw;
+      top: 186vw;
+      background: url(../svg/s22.svg) no-repeat center;
+    }
+  }
+  @-webkit-keyframes svgC {
+    0% {
+      width: 20vw;
+      height: 30vw;
+      right: 6vw;
+      top: 25vh;
+      background: url(../svg/so1.svg) no-repeat center;
+    }
+    40% {
+      background: url(../svg/so2.svg) no-repeat center;
+    }
+    80% {
+      background: url(../svg/so1.svg) no-repeat center;
+    }
+    100% {
+      width: 70vw;
+      height: 60vw;
+      top: 182vw;
+      right: -30vw;
+      background: url(../svg/so1.svg) no-repeat center;
+    }
+  }
+  @keyframes svgC {
+    0% {
+      width: 20vw;
+      height: 30vw;
+      right: 6vw;
+      top: 25vh;
+      background: url(../svg/so1.svg) no-repeat center;
+    }
+    40% {
+      background: url(../svg/so2.svg) no-repeat center;
+    }
+    80% {
+      background: url(../svg/so1.svg) no-repeat center;
+    }
+    100% {
+      width: 70vw;
+      height: 60vw;
+      top: 182vw;
+      right: -30vw;
+      background: url(../svg/so1.svg) no-repeat center;
+    }
+  }
+}
+
+/*-------------/@media (max-width: 400px)------------- */
